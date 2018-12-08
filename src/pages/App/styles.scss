@@ -1,0 +1,15 @@
+@import 'shared/styles/main.scss';
+
+.app-page {
+  background-color: $light-gray;
+
+  .app-page-loading-container {
+    @extend .main-container;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $dark-blue;
+  }
+}
