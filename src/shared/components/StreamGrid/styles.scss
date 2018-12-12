@@ -1,0 +1,59 @@
+.stream-grid-component {
+
+  .stream-card {
+    @extend .grid-list-card;
+    background: white;
+    border-bottom: 16px solid $blue;
+    box-sizing: border-box;
+    height: 216px;
+    padding: 20px;
+    padding-bottom: 0;
+    position: relative;
+    align-items: center;
+    &:hover {
+      .back-info {
+        opacity: 1;
+        background: $blue;
+
+        @media (max-width: $breakpoint-m) {
+          opacity: 0;
+        }
+      }
+    }
+
+    .stream-image {
+      margin-right: 20px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      height: 140px;
+      flex: 0 0 140px;
+    }
+    .stream-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      max-width: calc(100% - 160px);
+      .name {
+        color: black;
+        text-align: center;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-small-tablet) {
+    .stream-card .stream-info {
+      max-width: calc(100% - 111px);
+    }
+
+    .stream-card .stream-image {
+      height: 91px;
+      flex: 0 0 91px;
+    }
+  }
+}

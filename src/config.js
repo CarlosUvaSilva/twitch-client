@@ -2,11 +2,11 @@ const currentEnvironment = !process.env.NODE_ENV ? 'development' : process.env.N
 
 const defaultEnvironments = {
   development: {
-    TWITCH_URL: 'https://www.twitch.com',
+    TWITCH_URL: 'https://api.twitch.tv/kraken/',
   },
 
   production: {
-    TWITCH_URL: 'https://www.twitch.com',
+    TWITCH_URL: 'https://api.twitch.tv/kraken/',
   },
 }
 

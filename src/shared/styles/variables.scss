@@ -1,29 +1,36 @@
 /* == COLORS == */
 $light-blue: #B3C4DC;
+$white: #FFFFFF;
+$black: #000000;
 $blue: #0068FF;
 $dark-blue: #262D38;
 $orange: #F96500;
 $red: #E4001C;
+$error-red: #A70014;
 $light-gray: #FAFAFA;
-$gray: #A2A2A2;
-$dark-gray: #252525;
+$grey: #A2A2A2;
+$softer-grey: #EDF2F5;
+$soft-grey: #F2F2F2;
+$dark-grey: #979797;
 $border-color-blue: rgba(38,45,56,0.3); // $dark-blue
 $overlay-color: rgba(38,45,56,0.8); // $dark-blue
 
-/* == MEDIA QUERIES == */
-$breakpoint-xs: 320px;
-$breakpoint-s: 480px;
-$breakpoint-m: 767px;
-$breakpoint-l: 1024px;
-$breakpoint-xl: 1280px;
 
-$iphoneSmall: 320px;
-$iphone: 375px;
-$iphonePlus: 414px;
-$ipad: 768px;
-$ipadPro: 1024px;
-$ipadLandscape: 1366px;
-$desktop: 1440px;
+/* == GRID VARIABLES == */
+
+$gutter: 20px;
+$gutter-l: 30px;
+
+/* == MEDIA QUERIES == */
+
+$breakpoint-iphone5: 440px;
+$breakpoint-small-tablet: 753px;
+$breakpoint-ipad: 840px;
+$breakpoint-m: 61.9375em;
+$breakpoint-l: 71.1111111em;
+$breakpoint-ninety: 90%;
+$breakpoint-table: 90%;
+
 
 /* == OPACITY VARIABLES == */
 $image-opacity: 0.95;
@@ -31,3 +38,20 @@ $button-opacity: 0.85;
 $overlay-opacity: 0.8;
 $text-opacity: 0.6;
 $click-opacity: 0.4;
+
+/* == HOVER VARIABLES == */
+
+$hover-transition: opacity 200ms ease-in-out;
+$background-transition: background-color 200ms ease-in-out;
+$color-transition: color 200ms ease-in-out;
+$no-opacity: 1;
+$low-opacity: 0.95;
+$medium-opacity: 0.85;
+$high-opacity: 0.6;
+
+/* Box-shadow */
+$box-shadow: 1px 1px 6px 0px $dark-grey;
+$ligh-box-shadow: inset 0 0 3px 0 rgba(0,0,0,0.17);
+$dark-box-shadow: 1px -1px 30px -10px rgba(0,0,0,0.4);
+$component-box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.15);
+$input-box-shadow: inset 0 0 3px 0 rgba(0,0,0,0.17);

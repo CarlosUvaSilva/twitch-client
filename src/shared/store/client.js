@@ -8,7 +8,7 @@ const methods = ['get', 'post', 'put', 'patch', 'delete']
 
 const formatUrl = (path) => (
   path.search(/^https?:\/\/(.*)/) === -1 ?
-    { url: `${Config.API_BASE_URL}/${path}`, external: false }
+    { url: `${Config.TWITCH_URL}/${path}`, external: false }
     :
     { url: path, external: true }
 )
@@ -27,6 +27,9 @@ export default class client {
         if (headers) {
           request.set(headers);
         }
+
+        request.set('Accept', 'application/vnd.twitchtv.v5+json');
+        request.set('Client-ID', 'vawgt0x864f006ldz1ef0yw40lz3md');
 
         if (files) {
           files.forEach(file => request.attach(file.key, file.value));

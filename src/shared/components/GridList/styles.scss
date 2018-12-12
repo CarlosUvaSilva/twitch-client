@@ -1,0 +1,46 @@
+
+.grid-list-component {
+  .grid-list-loading {
+    height: calc(100vh - 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .see-more {
+    padding: 15px 0;
+    text-transform: uppercase;
+
+    .custom-button {
+      margin: 0 auto;
+    }
+  }
+
+  .no-data {
+    background-color: $white;
+    padding: 20px 20px;
+    height: 116px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      color: $black;
+
+      text-transform: uppercase;
+    }
+  }
+
+  .collapser {
+    padding-bottom: 55px;
+  }
+
+  @media (max-width: $breakpoint-l) {
+    .collapser {
+      padding-bottom: 25px;
+      margin-left: -$gutter;
+      margin-right: -$gutter;
+    }
+  }
+}

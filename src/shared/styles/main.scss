@@ -2,6 +2,13 @@
 @import 'shared/styles/variables.scss';
 @import 'shared/styles/utils.scss';
 
+@import 'shared/styles/neat/_neat.scss';
+@import 'shared/styles/neat/_grid.scss';
+@import 'shared/styles/neat/_layout.scss';
+
 @import 'pages/Home/styles.scss';
 
-// @import 'shared/components/Cenas/styles.scss';
+@import 'shared/components/CustomButton/styles.scss';
+@import 'shared/components/GridList/styles.scss';
+@import 'shared/components/StreamGrid/styles.scss';
+@import 'shared/components/StreamFrame/styles.scss';

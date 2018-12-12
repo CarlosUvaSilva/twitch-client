@@ -1,0 +1,97 @@
+// body {
+//   margin: 0;
+// }
+
+.container {
+  @include grid-container;
+  // h2, h3, h4, h5 {
+  //   font-family: MyriadPro-Light, Arial, sans-serif;
+  //   font-weight: normal;
+  // }
+  // h6 {
+  //    font-family: MyriadPro-Semibold, Arial, sans-serif;
+  // }
+}
+.inner {
+  @include grid-container;
+  margin: 0 auto;
+  max-width: $breakpoint-l;
+}
+
+.collapser {
+  @extend .container;
+  @include grid-media($grid-l) {
+    @include grid-collapse;
+  };
+  position: relative;
+  z-index: 1;
+}
+
+.table {
+  @include grid-container;
+  margin: 0 auto;
+  max-width: $breakpoint-table;
+}
+
+.percent-90 {
+  @include grid-container;
+  margin: 0 auto;
+  max-width: $breakpoint-ninety;
+}
+
+.four.collapser > div {
+  @include grid-column(2);
+  @include grid-media($grid-m) {
+    @include grid-column(6);
+  }
+  @include grid-media($grid-ipad) {
+    @include grid-column(6);
+  }
+  @include grid-media($grid-l) {
+    @include grid-column(3);
+  }
+}
+
+.three.collapser > div {
+  @include grid-column(2);
+  @include grid-media($grid-m) {
+    @include grid-column(6);
+  }
+  @include grid-media($grid-ipad) {
+    @include grid-column(6);
+  }
+  @include grid-media($grid-l) {
+    @include grid-column(4);
+  }
+}
+
+.two.collapser > div {
+  @include grid-column(2);
+  @include grid-media($grid-m) {
+    @include grid-column(6);
+  }
+  @include grid-media($grid-l) {
+    @include grid-column(6);
+  }
+}
+// .one.collapser > div {
+//   display: block;
+//   margin: 0 auto;
+
+//   @media (min-width: $breakpoint-l) {
+//     max-width: $container-l;
+//   }
+
+//   @media (min-width: $breakpoint-m) and (max-width: $breakpoint-l) {
+//     max-width: $container-m;
+//   }
+
+//   @media (min-width: $breakpoint-ipad) and (max-width: $breakpoint-m) {
+//     max-width: $container-ipad;
+//   }
+
+//   @media (max-width: $breakpoint-ipad) {
+//     max-width: 100%;
+//     padding: 0 $gutter;
+//   }
+// }

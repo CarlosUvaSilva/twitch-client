@@ -1,0 +1,34 @@
+$neat-grid: (
+  columns: 2,
+  gutter: $gutter,
+);
+
+$grid-s: (
+  columns: 2,
+  gutter: $gutter,
+  media: "screen and (max-width: #{$breakpoint-m - 0.001})"
+);
+
+$grid-ipad: (
+  columns: 12,
+  gutter: $gutter,
+  media: $breakpoint-ipad
+);
+
+$grid-m: (
+  columns: 12,
+  gutter: $gutter,
+  media: $breakpoint-m
+);
+
+$grid-l: (
+  columns: 12,
+  gutter: $gutter-l,
+  media: $breakpoint-l,
+);
+
+$grid-3columns: (
+  columns: 3,
+  gutter: 0,
+  media: $breakpoint-table,
+);

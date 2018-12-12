@@ -9,3 +9,9 @@
   background-color: $dark-blue;
 }
 
+.grid-list-card {
+  display: flex;
+  flex-direction: row;
+  background: $overlay-color;
+  margin-top: 30px;
+}
