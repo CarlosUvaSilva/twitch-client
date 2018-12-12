@@ -8,17 +8,30 @@ export default class StreamFrame extends Component {
 
   render() {
     const { stream } = this.props
-
-    const streamUrl = this.streamUrl(stream.name)
+    const streamUrl = this.streamUrl(stream.channel.name)
 
     return (
       <div className="streams-section">
         <iframe
-          title={stream.status}
+          title={stream.channel.status}
           src={streamUrl}
           scrolling="no"
           allowFullScreen="true">
         </iframe>
+        <div className="stream-info">
+          <h2>{stream.channel.description}</h2>
+
+          <div className="general-info">
+            <h3>{stream.channel.display_name}</h3>
+            <div
+              className="stream-image"
+              style={stream.channel.logo ? { backgroundImage: `url('${stream.channel.logo}')` } : null }
+            />
+            <h3 className="viewers">Viewers: {stream.viewers}</h3>
+          </div>
+
+          <h2>{stream.channel.status}</h2>
+        </div>
       </div>
     )
   }

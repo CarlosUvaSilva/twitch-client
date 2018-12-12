@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export default class InputField extends Component {
-
   static propTypes = {
     valueContext: PropTypes.object.isRequired,
     valueName: PropTypes.string.isRequired

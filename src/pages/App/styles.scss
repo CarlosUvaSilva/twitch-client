@@ -1,9 +1,6 @@
 @import 'shared/styles/main.scss';
 
 .app-page {
-  background-color: $light-gray;
-  max-width: 1440px;
-  margin:auto;
   .app-page-loading-container {
     @extend .main-container;
     width: 100%;

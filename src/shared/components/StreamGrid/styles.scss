@@ -7,28 +7,15 @@
     box-sizing: border-box;
     height: 216px;
     padding: 20px;
-    padding-bottom: 0;
     position: relative;
     align-items: center;
-    &:hover {
-      .back-info {
-        opacity: 1;
-        background: $blue;
-
-        @media (max-width: $breakpoint-m) {
-          opacity: 0;
-        }
-      }
-    }
-
     .stream-image {
       margin-right: 20px;
       background-size: contain;
       background-repeat: no-repeat;
       background-position: 50% 50%;
       height: 140px;
-      flex: 0 0 140px;
-    }
+      width: 200px;    }
     .stream-info {
       display: flex;
       flex-direction: column;
@@ -42,6 +29,10 @@
         max-width: 100%;
         text-overflow: ellipsis;
         overflow: hidden;
+        &.caster {
+          font-weight: bold;
+          margin-bottom: 10px
+        }
       }
     }
   }

@@ -1,24 +1,10 @@
 .home-page {
-  min-height: 100vh;
-  background-color: $light-blue;
-  .search-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    .input-field {
-      flex: 1;
-      height: 100px;
-      border: none;
-      border-width: 0;
-      color: white;
-      background-color: transparent;
-      font-size: 50pt;
-      letter-spacing: 7.5px;
-      &::placeholder {
-        color: white;
-        font-size: 50pt;
-        letter-spacing: 7.5px;
-      }
-    }
+  background-color: $soft-grey;
+  .home-container {
+    max-width: $max-width;
+    margin:auto;
+    min-height: calc(100vh - 100px);
+    padding-bottom: 50px;
+    padding-top: 50px;
   }
 }

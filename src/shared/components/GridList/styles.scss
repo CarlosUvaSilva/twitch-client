@@ -17,17 +17,14 @@
   }
 
   .no-data {
-    background-color: $white;
     padding: 20px 20px;
     height: 116px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     p {
       color: $black;
-
       text-transform: uppercase;
     }
   }

@@ -1,21 +1,55 @@
 .streams-section {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  width: 60%;
-  padding-right: 20px;
-  flex-direction: column;
+  margin-top: 50px;
+  width: 100%;
+
+  @media (min-width: $breakpoint-m) and (max-width: $max-width) {
+    padding: 0 20px;
+  }
 
   @media (max-width: $breakpoint-m) {
     width: 100%;
+    flex-direction: column;
   }
 
   iframe {
     height: 400px;
-    width: 100%;
+    width: 60%;
 
     @media (max-width: $breakpoint-m) {
       height: 200px;
+    }
+  }
+
+  .stream-info {
+    padding: 50px;
+    h2 {
+      font-weight: bold;
+    }
+    .general-info {
+      margin-top: 25px;
+      margin-bottom: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h3 {
+        font-weight: bold;
+      }
+      .stream-image {
+        margin-top: 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        height: 140px;
+        width: 140px;
+      }
+      .viewers {
+        margin-top: 20px;
+      }
     }
   }
 }

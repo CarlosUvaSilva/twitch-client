@@ -3,20 +3,28 @@ import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import InputField from '../../shared/components/InputField'
-import CustomButton from '../../shared/components/CustomButton'
 import StreamGrid from '../../shared/components/StreamGrid'
 import StreamFrame from '../../shared/components/StreamFrame'
+import SearchBar from '../../shared/components/SearchBar'
 
 import {
   actions as twitchActions, selectors as twitchSelectors
 } from '../../shared/store/reducers/twitch'
 
+import {
+  actions as settingsActions, selectors as settingsSelectors
+} from '../../shared/store/reducers/settings'
 
 class Home extends Component {
+  static propTypes = {
+    getStream: PropTypes.func.isRequired,
+    setPerPage: PropTypes.func.isRequired,
+    getPerPage: PropTypes.func.isRequired
+  }
+
   state={
-    searchValue: null,
-    streamSelected: null
+    streamSelected: null,
+    perPage: 25
   }
 
   componentDidMount() {
@@ -24,28 +32,15 @@ class Home extends Component {
   }
 
   render () {
-    const { streams, streamsLoading } = this.props
+    const { streams, streamsLoading, perPageCookie } = this.props
     const { streamSelected } = this.state
-
     return (
       <div className='home-page'>
         <div className='home-container'>
-          <div className='search-container'>
-            <InputField
-              autoFocus
-              className='input-field'
-              type='text'
-              valueContext={this}
-              valueName='searchValue'
-              placeholder='Search streams'
-            />
-            <CustomButton
-              text='Search'
-              type={"empty"}
-              color={"black"}
-              onClick={() => this.searchStream()}
-            />
-          </div>
+          <SearchBar
+            filterStreams={this.searchStream}
+            perPageCookie={perPageCookie}
+          />
           { streamSelected &&
             <StreamFrame stream={streamSelected} />
           }
@@ -62,17 +57,18 @@ class Home extends Component {
   }
 
   fetchInitialData = () => {
-    const { getStream } = this.props
-    getStream()
+    this.props.getPerPage()
+    this.props.getStream()
   }
 
-  searchStream = () => {
-    const { searchValue } = this.state
-    const { getStream } = this.props
+  searchStream = (searchValue, perPage) => {
+    const { getStream, setPerPage } = this.props
+
+    setPerPage(perPage)
 
     let query = ''
     if (searchValue !== null) {
-      query = `?game=${searchValue}`
+      query = `game=${searchValue}`
     }
     getStream(query)
   }
@@ -84,12 +80,15 @@ class Home extends Component {
 
 
 const mapStateToProps = state => ({
+  perPageCookie: settingsSelectors.getPerPageSelector(state),
   streams: twitchSelectors.getStreamList(state),
   streamsLoading: twitchSelectors.getStreamLoading(state)
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   getStream:  twitchActions.getStreams,
+  setPerPage: settingsActions.setPerPageCookie,
+  getPerPage: settingsActions.getPerPageCookie
 }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

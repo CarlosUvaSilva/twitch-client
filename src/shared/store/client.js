@@ -1,8 +1,5 @@
 import superagent from 'superagent'
-import Cookies from 'universal-cookie'
 import Config from 'config'
-
-const cookies = new Cookies()
 
 const methods = ['get', 'post', 'put', 'patch', 'delete']
 
@@ -29,7 +26,7 @@ export default class client {
         }
 
         request.set('Accept', 'application/vnd.twitchtv.v5+json');
-        request.set('Client-ID', 'vawgt0x864f006ldz1ef0yw40lz3md');
+        request.set('Client-ID', `${Config.TWITCH_CLIENT_ID}`);
 
         if (files) {
           files.forEach(file => request.attach(file.key, file.value));
